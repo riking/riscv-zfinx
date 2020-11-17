@@ -5,7 +5,7 @@
 [[Heading]]
 == Overview
 
-Zfinx is an extension which changes all existing and future floating point extensions which use the `F` floating point registers, so that instead they use the `X` registers. Hence the name `F-in-X`. This does not affect floating point instructions which are implemented as part of the Vector (`v`) extension. `Zfinx` additionally modifies the RISCV base architecture to remove all floating point load (e.g. `FLW`) store (e.g. `FSW`) and register move (e.g. `FMV.X.W`) encodings as the integer versions of these are required instead.
+Zfinx is an extension which changes all existing and future floating point extensions which use the `F` floating point registers, so that instead they use the `X` registers. Hence the name `F-in-X`. This does not affect floating point instructions which are implemented as part of the Vector (`v`) extension (except where these instructions attempt to access scalar F registers). `Zfinx` additionally modifies the RISCV base architecture to remove all floating point load (e.g. `FLW`) store (e.g. `FSW`) and register move (e.g. `FMV.X.W`) encodings as the integer versions of these are required instead.
 
 On a `Zfinx` core the assembler syntax of floating point instructions changes so that they only refer to `X` registers. Therefore on an RV32F core this is legal syntax:
 
